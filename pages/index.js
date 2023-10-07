@@ -88,7 +88,6 @@ const Home = () => {
     <div>
       <Navbar />
       <div className={styles.container}>
-        <h1 className={styles.title}>ClimaGuard</h1>
         {weatherData && weatherData.current ? (
           <>
             <WeatherAlert

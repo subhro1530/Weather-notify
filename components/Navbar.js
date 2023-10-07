@@ -1,11 +1,14 @@
 // components/Navbar.js
 import React from "react";
 import styles from "@/styles/Navbar.module.css";
+import Image from "next/image";
 
 const Navbar = () => {
   return (
     <nav className={styles.navbar}>
-      <div className={styles.logo}>ClimaGuard</div>
+          <div className={styles.logo}>
+              <Image src="/logo.png" height={30} width={180}></Image>
+      </div>
       <div className={styles.navLinks}>
         <a href="#" className={styles.navLink}>
           Home
