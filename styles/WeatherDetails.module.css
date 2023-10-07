@@ -1,0 +1,17 @@
+/* components/WeatherDetails.module.css */
+
+.weatherDetails {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.weatherDetails p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.weatherDetails strong {
+  margin-right: 5px;
+}

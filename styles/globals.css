@@ -1,0 +1,19 @@
+/* styles/globals.css */
+
+/* Reset some default browser styles */
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Apply default font and color to the body */
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+}
+
+/* Add any other global styles here */
