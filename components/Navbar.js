@@ -16,15 +16,15 @@ const Navbar = () => {
         <a href="#" className={styles.navLink}>
           About
         </a>
-        <a href="#" className={styles.navLink}>
+        <a href="/Team.js" className={styles.navLink}>
           Team
         </a>
       </div>
       <div className={styles.authLinks}>
-        <a href="#" className={styles.navLink}>
-          Login
+        <a href="/SignIn.js" className={styles.navLink}>
+          Signin
         </a>
-        <a href="#" className={styles.navLink}>
+        <a href="/SignUp.js" className={styles.navLink}>
           Signup
         </a>
       </div>

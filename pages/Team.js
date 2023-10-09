@@ -1,10 +1,10 @@
-// components/SignIn.js
+// components/Team.js
 import React, { useState, useEffect } from "react";
 import styles from "@/styles/WeatherDetails.module.css";
 
-const SignIn = () => {
+const Team = () => {
     return (
-       <div></div>
+       <div>Team</div>
     );
 };
-export default SignIn;
+export default Team;

@@ -1,10 +1,10 @@
-// components/SignUp.js
+// components/SignIn.js
 import React, { useState, useEffect } from "react";
 import styles from "@/styles/WeatherDetails.module.css";
 
-const SignUp = () => {
+const SignIn = () => {
     return (
-       <div></div>
+       <div>SignIn</div>
     );
 };
-export default SignUp;
+export default SignIn;
