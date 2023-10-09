@@ -1,0 +1,9 @@
+/* components/Copyright.module.css */
+.copyrightCont{
+    background-color: grey;
+    color: white;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
