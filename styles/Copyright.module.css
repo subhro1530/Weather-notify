@@ -1,9 +1,14 @@
 /* components/Copyright.module.css */
 .copyrightCont{
-    background-color: grey;
-    color: white;
+    background-color: transparent;
+    color: rgb(0, 183, 255);
     text-align: center;
+    font-size: 12px;
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+.promo{
+    color: rgb(100, 183, 255);
+    text-decoration: none;
 }

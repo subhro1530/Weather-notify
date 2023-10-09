@@ -1,0 +1,31 @@
+.weatherInfo{
+    background-image: url("/box_home.png");
+    background-color: transparent;
+    height: 85vh;
+    width: 60vw;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: rgb(0, 225, 255);
+    overflow: hidden;
+    transition: .2s ease-in-out transform;
+    margin-top: 80px;
+}
+.weatherInfo:hover{
+    transform: scale(1.05);
+}
+.weatherInfo .heading{
+    font-size: 60px;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+.weatherInfo p{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.weatherInfo p strong{
+    color: rgb(0, 106, 167);
+    margin-right: 10px;
+}

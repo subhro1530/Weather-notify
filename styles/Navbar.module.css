@@ -8,6 +8,9 @@
   color: white;
   margin: 1%;
   border-radius: 50px;
+  position: fixed;
+  width: 96vw;
+  box-shadow: 5px 5px 15px -5px rgba(0, 221, 255, 0.523);
 }
 
 .logo {

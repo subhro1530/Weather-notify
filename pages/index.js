@@ -2,8 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Copyright from "../components/Copyright";
-import WeatherAlert from "../components/WeatherAlert";
-import WeatherDetails from "../components/WeatherDetails";
+import WeatherInfo from "../components/WeatherInfo";
 import styles from "@/styles/index.module.css";
 
 const Home = () => {
@@ -86,55 +85,50 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className={styles.body}>
       <Navbar />
       <div className={styles.container}>
         {weatherData && weatherData.current ? (
-          <>
-            <WeatherAlert
-              temperature={weatherData.current.temp_c}
-              maxTemp={maxTempAlert}
-              minTemp={minTempAlert}
-            />
-            <WeatherDetails
-              location={weatherData.location.name}
-              time={weatherData.location.localtime}
-              date={weatherData.location.localtime.split(" ")[0]}
-              weather={weatherData.current.condition.text}
-              humidity={weatherData.current.humidity}
-              wind={weatherData.current.wind_kph}
-            />
-            <div className={styles.inputSection}>
-              <label>
-                Max Temperature:
-                <input
-                  type="number"
-                  value={maxTempAlert}
-                  onChange={handleMaxTempChange}
-                />
-              </label>
-              <label>
-                Min Temperature:
-                <input
-                  type="number"
-                  value={minTempAlert}
-                  onChange={handleMinTempChange}
-                />
-              </label>
-              <button onClick={handleNotificationPermission}>
-                Enable Notifications
-              </button>
-            </div>
-            <p>
-              Next update in {Math.floor(nextUpdateCountdown / 60)} minutes{" "}
-              {nextUpdateCountdown % 60} seconds.
-            </p>
-          </>
+          <WeatherInfo
+            location={weatherData.location.name}
+            temperature={weatherData.current.temp_c}
+            maxTemp={maxTempAlert}
+            minTemp={minTempAlert}
+            date={weatherData.location.localtime.split(" ")[0]}
+            weather={weatherData.current.condition.text}
+            humidity={weatherData.current.humidity}
+            wind={weatherData.current.wind_kph}
+          />
         ) : (
           <p>Loading...</p>
         )}
+        <div className={styles.inputSection}>
+          <label>
+            Max Temperature:
+            <input
+              type="number"
+              value={maxTempAlert}
+              onChange={handleMaxTempChange}
+            />
+          </label>
+          <label>
+            Min Temperature:
+            <input
+              type="number"
+              value={minTempAlert}
+              onChange={handleMinTempChange}
+            />
+          </label>
+          <button onClick={handleNotificationPermission}>
+            Enable Notifications
+          </button>
+        <p>
+          Next update in {Math.floor(nextUpdateCountdown / 60)} minutes{" "}
+          {nextUpdateCountdown % 60} seconds.
+        </p>
+        </div>
       </div>
-      <Copyright/>
+      <Copyright />
     </div>
   );
 };
