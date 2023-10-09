@@ -4,15 +4,18 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #a6a6a6;
+  background-color: #181C37;
   color: white;
   margin: 1%;
   border-radius: 50px;
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+  /* margin-top: 3px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
 }
 
 .navLinks {
@@ -25,11 +28,18 @@
 
 .navLink {
   margin-right: 1rem;
-  color: white;
+  color: rgba(0, 221, 255, 0.823);
   text-decoration: none;
+  transition: .2s ease-in-out transform;
+  border: 2px solid rgb(0, 255, 251);
+  border-radius: 50px;
+  padding: 5px 15px;
+  box-shadow: 1px 1px 15px -5px rgba(0, 221, 255, 0.823);
 }
 
 .navLink:hover {
   font-weight: bold;
-  color: black;
+  transform: scale(1.1);
+  color: rgb(50, 197, 255);
+  border: 3px solid;
 }
