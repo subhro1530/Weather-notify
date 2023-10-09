@@ -10,21 +10,21 @@ const Navbar = () => {
               <Image src="/logo.png" height={30} width={180}></Image>
       </div>
       <div className={styles.navLinks}>
-        <a href="#" className={styles.navLink}>
+        <a href="/" className={styles.navLink}>
           Home
         </a>
-        <a href="#" className={styles.navLink}>
+        <a href="/About" className={styles.navLink}>
           About
         </a>
-        <a href="/Team.js" className={styles.navLink}>
+        <a href="/Team" className={styles.navLink}>
           Team
         </a>
       </div>
       <div className={styles.authLinks}>
-        <a href="/SignIn.js" className={styles.navLink}>
+        <a href="/SignIn" className={styles.navLink}>
           Signin
         </a>
-        <a href="/SignUp.js" className={styles.navLink}>
+        <a href="/SignUp" className={styles.navLink}>
           Signup
         </a>
       </div>

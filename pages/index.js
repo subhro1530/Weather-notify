@@ -1,6 +1,7 @@
 // pages/index.js
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
+import Copyright from "../components/Copyright";
 import WeatherAlert from "../components/WeatherAlert";
 import WeatherDetails from "../components/WeatherDetails";
 import styles from "@/styles/index.module.css";
@@ -133,6 +134,7 @@ const Home = () => {
           <p>Loading...</p>
         )}
       </div>
+      <Copyright/>
     </div>
   );
 };

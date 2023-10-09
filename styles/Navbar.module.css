@@ -28,3 +28,8 @@
   color: white;
   text-decoration: none;
 }
+
+.navLink:hover {
+  font-weight: bold;
+  color: black;
+}
