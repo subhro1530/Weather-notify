@@ -105,6 +105,7 @@ const Home = () => {
               wind={weatherData.current.wind_kph}
             />
             <div className={styles.inputSection}>
+            <form method="POST" action="/userTemp">
               <label>
                 Max Temperature:
                 <input
@@ -124,6 +125,7 @@ const Home = () => {
               <button onClick={handleNotificationPermission}>
                 Enable Notifications
               </button>
+              </form>
             </div>
             <p>
               Next update in {Math.floor(nextUpdateCountdown / 60)} minutes{" "}
