@@ -113,7 +113,7 @@ const Home = () => {
               onChange={handleMaxTempChange}
             />
           </label>
-          <label>
+          <label className={styles.minTemp}>
             Min Temperature:
             <input
               type="number"

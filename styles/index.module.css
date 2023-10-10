@@ -1,5 +1,5 @@
 .body{
-  background-color: #0E101F;
+  background-color: #0E101F;  
 }
 
 .container{
@@ -23,7 +23,13 @@
   background-size: cover;
   margin-top: 100px;
   height: 40vw;
+  padding: 30px;
   transition: .2s ease-in-out transform;
+}
+.inputSection form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .inputSection:hover{
   transform: scale(1.1);
