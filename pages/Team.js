@@ -32,14 +32,14 @@ const Team = () => {
           <div className={styles.memberCont}>
             <div className={styles.memberImagecont}>
               <Image
-                src="/logo.png"
+                src="/pratham.jpg"
                 height={180}
                 width={180}
                 className={styles.memberImage}
               ></Image>
             </div>
             <div className={styles.memberDesc}>
-              <strong>Pratham Aggarwal</strong>
+              <strong>Pratham Agarwal</strong>
               <br />
               Web Developer Beginner. Pratham contributes to the team with a
               passion for web development and a drive for innovation.
@@ -48,7 +48,7 @@ const Team = () => {
           <div className={styles.memberCont}>
             <div className={styles.memberImagecont}>
               <Image
-                src="/logo.png"
+                src="/deep.jpg"
                 height={180}
                 width={180}
                 className={styles.memberImage}
@@ -58,13 +58,13 @@ const Team = () => {
               <strong>Deep Ghosal</strong>
               <br />
               Backend Beginner Developer. Deep plays a crucial role in ensuring
-              the robust functionality of ClimaGuard's backend systems.
+              the robust functionality of ClimaGuard`&apos;`s backend systems.
             </div>
           </div>
           <div className={styles.memberCont}>
             <div className={styles.memberImagecont}>
               <Image
-                src="/logo.png"
+                src="/yatan.jpg"
                 height={180}
                 width={180}
                 className={styles.memberImage}

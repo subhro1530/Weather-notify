@@ -23,8 +23,8 @@ const About = () => {
         <p>
           To use ClimaGuard, simply set your desired temperature limits on the
           homepage, and our system will monitor the weather for you. If the
-          temperature goes beyond your set limits, you'll receive timely
-          notifications, ensuring you're always prepared for the weather
+          temperature goes beyond your set limits, you`&apos;`ll receive timely
+          notifications, ensuring you`&apos;`re always prepared for the weather
           conditions.
         </p>
         <p>Stay informed, stay safe with ClimaGuard.</p>

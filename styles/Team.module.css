@@ -30,7 +30,7 @@
     box-shadow: 2px 2px 15px -5px rgba(2, 255, 221, 0.773);
 }
 .memberImage{
-    border-radius: 50px;
+    border-radius: 100px;
     border: 2px solid rgb(0, 208, 255);
 }
 .memberDesc{

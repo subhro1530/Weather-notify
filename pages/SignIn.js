@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "@/styles/Sign.module.css";
 import Navbar from "../components/Navbar";
+import Link from "next/link";
 
 const SignIn = () => {
   return (
@@ -36,7 +37,7 @@ const SignIn = () => {
                   Forgot Password
                 </button>
                 <button className={styles.CreateAccountBtn}>
-                  <a href="/SignUp">Create New Account</a>
+                  <Link href="/SignUp">Create New Account</Link>
                 </button>
               </div>
             </div>
