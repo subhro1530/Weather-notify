@@ -58,7 +58,7 @@ const Team = () => {
               <strong>Deep Ghosal</strong>
               <br />
               Backend Beginner Developer. Deep plays a crucial role in ensuring
-              the robust functionality of ClimaGuard's backend systems.
+              the robust functionality of ClimaGuard`&apos;`s backend systems.
             </div>
           </div>
           <div className={styles.memberCont}>

@@ -71,7 +71,7 @@ const SignUp = () => {
 
                 <button className={styles.CreateAccountBtn}>
                   Already Registered
-                  <a href="/SignIn">Log In</a>
+                  <Link href="/SignIn">Log In</Link>
                 </button>
               </div>
             </div>

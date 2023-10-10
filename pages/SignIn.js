@@ -36,7 +36,7 @@ const SignIn = () => {
                   Forgot Password
                 </button>
                 <button className={styles.CreateAccountBtn}>
-                  <a href="/SignUp">Create New Account</a>
+                  <Link href="/SignUp">Create New Account</Link>
                 </button>
               </div>
             </div>

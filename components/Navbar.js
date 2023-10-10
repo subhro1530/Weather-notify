@@ -10,23 +10,23 @@ const Navbar = () => {
           <Image src="/logo.png" height={30} width={220}></Image>
       </div>
       <div className={styles.navLinks}>
-        <a href="/" className={styles.navLink}>
+        <Link href="/" className={styles.navLink}>
           Home
-        </a>
-        <a href="/About" className={styles.navLink}>
+        </Link>
+        <Link href="/About" className={styles.navLink}>
           About
-        </a>
-        <a href="/Team" className={styles.navLink}>
+        </Link>
+        <Link href="/Team" className={styles.navLink}>
           Team
-        </a>
+        </Link>
       </div>
       <div className={styles.authLinks}>
-        <a href="/SignIn" className={styles.navLink}>
+        <Link href="/SignIn" className={styles.navLink}>
           SignIn
-        </a>
-        <a href="/SignUp" className={styles.navLink}>
+        </Link>
+        <Link href="/SignUp" className={styles.navLink}>
           SignUp
-        </a>
+        </Link>
       </div>
     </nav>
   );
