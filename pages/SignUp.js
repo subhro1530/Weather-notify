@@ -10,7 +10,7 @@ const SignUp = () => {
       <div className={styles.body}>
         <div className={styles.signCont}>
           <h1 className={styles.signTitle}>Sign Up</h1>
-          <form method="POST" action="/">
+          <form method="POST" action="/userSignUp">
             <div className={styles.signInfoItems}>
               <div className={styles.ItemCont}>
                 <label>First Name : </label>
