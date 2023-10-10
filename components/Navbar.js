@@ -6,8 +6,8 @@ import Image from "next/image";
 const Navbar = () => {
   return (
     <nav className={styles.navbar}>
-          <div className={styles.logo}>
-              <Image src="/logo.png" height={30} width={220}></Image>
+      <div className={styles.logo}>
+          <Image src="/logo.png" height={30} width={220}></Image>
       </div>
       <div className={styles.navLinks}>
         <a href="/" className={styles.navLink}>
@@ -22,10 +22,10 @@ const Navbar = () => {
       </div>
       <div className={styles.authLinks}>
         <a href="/SignIn" className={styles.navLink}>
-          Signin
+          SignIn
         </a>
         <a href="/SignUp" className={styles.navLink}>
-          Signup
+          SignUp
         </a>
       </div>
     </nav>

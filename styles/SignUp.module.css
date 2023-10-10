@@ -6,11 +6,12 @@
     height: 100vh;
 }
 .signCont{
+    margin-top: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
-    width: 55vw;
+    height: 90vh;
+    width: 62vw;
     background-image: url("/box_home.png");
     background-size: cover;
     flex-direction: column;
@@ -36,7 +37,7 @@
 .signTitle{
     margin-bottom: 20px;
     font-weight: 400;
-    font-size: 50px;
+    font-size: 40px;
 }
 .ItemCont2{
     display: flex;
