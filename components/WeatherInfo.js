@@ -1,9 +1,20 @@
-// components/WeatherDetails.js
+// components/WeatherInfo.js
 import React, { useState, useEffect } from "react";
-import styles from "@/styles/WeatherDetails.module.css";
+import styles from "@/styles/WeatherInfo.module.css";
 
-const WeatherDetails = ({ location, time, date, weather, humidity, wind }) => {
-  const [currentTime, setCurrentTime] = useState(time);
+const WeatherInfo = ({
+  location,
+  temperature,
+  maxTemp,
+  minTemp,
+  date,
+  weather,
+  humidity,
+  wind,
+}) => {
+  const [currentTime, setCurrentTime] = useState(
+    new Date().toLocaleTimeString()
+  );
 
   useEffect(() => {
     // Update the time every minute (adjust the interval as needed)
@@ -22,9 +33,19 @@ const WeatherDetails = ({ location, time, date, weather, humidity, wind }) => {
   }, []); // Empty dependency array ensures that the effect runs only once on mount
 
   return (
-    <div className={styles.weatherDetails}>
+    <div className={styles.weatherInfo}>
+      <h2 className={styles.heading}>Weather Information</h2>
       <p>
         <strong>Location:</strong> {location}
+      </p>
+      <p>
+        <strong>Current Temperature:</strong> {temperature}°C
+      </p>
+      <p>
+        <strong>Max Temperature Alert:</strong> {maxTemp}°C
+      </p>
+      <p>
+        <strong>Min Temperature Alert:</strong> {minTemp}°C
       </p>
       <p>
         <strong>Time:</strong> {currentTime}
@@ -45,4 +66,4 @@ const WeatherDetails = ({ location, time, date, weather, humidity, wind }) => {
   );
 };
 
-export default WeatherDetails;
+export default WeatherInfo;

@@ -1,6 +1,6 @@
 // components/Team.js
-import React, { useState, useEffect } from "react";
-import styles from "@/styles/WeatherDetails.module.css";
+import React from "react";
+import styles from "@/styles/Team.module.css";
 import Navbar from "../components/Navbar";
 import Image from "next/image";
 
@@ -9,83 +9,72 @@ const Team = () => {
     <div>
       <Navbar />
       <div className={styles.mainCont}>
-        <h1 className={styles.teamnameTitle}>Our Team Name</h1>
-        <h2 className={styles.teammembersTitle}>Our Team Members</h2>
+        <h1 className={styles.teamnameTitle}>ClimaGuard</h1>
+        <h2 className={styles.teammembersTitle}>Team Members</h2>
         <div className={styles.membersCont}>
           <div className={styles.memberCont}>
             <div className={styles.memberImagecont}>
               <Image
-                src="/logo.png"
-                height={30}
+                src="/subhro.jpg"
+                height={180}
                 width={180}
-                classNam={styles.memberImage}
+                className={styles.memberImage}
               ></Image>
             </div>
             <div className={styles.memberDesc}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <strong>Shaswata Saha</strong>
+              <br />
+              Front-end Developer, Designer, Cybersecurity Enthusiast. Shaswata
+              leads ClimaGuard with a wealth of expertise, ensuring a seamless
+              and secure user experience.
             </div>
           </div>
           <div className={styles.memberCont}>
             <div className={styles.memberImagecont}>
               <Image
                 src="/logo.png"
-                height={30}
+                height={180}
                 width={180}
-                classNam={styles.memberImage}
+                className={styles.memberImage}
               ></Image>
             </div>
             <div className={styles.memberDesc}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <strong>Pratham Aggarwal</strong>
+              <br />
+              Web Developer Beginner. Pratham contributes to the team with a
+              passion for web development and a drive for innovation.
             </div>
           </div>
           <div className={styles.memberCont}>
             <div className={styles.memberImagecont}>
               <Image
                 src="/logo.png"
-                height={30}
+                height={180}
                 width={180}
-                classNam={styles.memberImage}
+                className={styles.memberImage}
               ></Image>
             </div>
             <div className={styles.memberDesc}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <strong>Deep Ghosal</strong>
+              <br />
+              Backend Beginner Developer. Deep plays a crucial role in ensuring
+              the robust functionality of ClimaGuard's backend systems.
             </div>
           </div>
           <div className={styles.memberCont}>
             <div className={styles.memberImagecont}>
               <Image
                 src="/logo.png"
-                height={30}
+                height={180}
                 width={180}
-                classNam={styles.memberImage}
+                className={styles.memberImage}
               ></Image>
             </div>
             <div className={styles.memberDesc}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <strong>Yatan Kumar</strong>
+              <br />
+              Beginner Researcher. Yatan brings a fresh perspective to the team
+              as a novice researcher, exploring new horizons for ClimaGuard.
             </div>
           </div>
         </div>

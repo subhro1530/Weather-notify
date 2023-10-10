@@ -2,8 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Copyright from "../components/Copyright";
-import WeatherAlert from "../components/WeatherAlert";
-import WeatherDetails from "../components/WeatherDetails";
+import WeatherInfo from "../components/WeatherInfo";
 import styles from "@/styles/index.module.css";
 
 const Home = () => {
@@ -86,7 +85,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className={styles.body}>
       <Navbar />
       <div className={styles.container}>
         {weatherData && weatherData.current ? (
@@ -105,7 +104,6 @@ const Home = () => {
               wind={weatherData.current.wind_kph}
             />
             <div className={styles.inputSection}>
-            <form method="POST" action="/userTemp">
               <label>
                 Max Temperature:
                 <input
@@ -125,7 +123,6 @@ const Home = () => {
               <button onClick={handleNotificationPermission}>
                 Enable Notifications
               </button>
-              </form>
             </div>
             <p>
               Next update in {Math.floor(nextUpdateCountdown / 60)} minutes{" "}
@@ -136,7 +133,7 @@ const Home = () => {
           <p>Loading...</p>
         )}
       </div>
-      <Copyright/>
+      <Copyright />
     </div>
   );
 };

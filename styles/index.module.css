@@ -1,35 +1,56 @@
-/* pages/index.module.css */
-
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  margin-top: 20px;
+.body{
+  background-color: #0E101F;
 }
 
-.title {
-  color: #333;
-  font-size: 2rem;
-  margin-bottom: 20px;
+.container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  color: rgb(0, 247, 255);
+  
 }
-
-/* styles for WeatherAlert component */
-.weather-alert {
-  border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 8px;
-  margin-top: 20px;
+.inputSection{
+  width: 40vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  /* padding-right: 50px; */
+  /* margin-right: 50px; */
+  background-image: url("/circle_home.png");
+  background-size: cover;
+  margin-top: 100px;
+  height: 40vw;
+  transition: .2s ease-in-out transform;
 }
-
-.weather-alert h2 {
-  font-size: 1.5rem;
+.inputSection:hover{
+  transform: scale(1.1);
+}
+.inputSection input{
+  color: white;
+  background-color: transparent;
+  border: 1px solid skyblue;
+  border-radius: 20px;
+  margin-left: 10px;
+  padding: 5px 10px;
   margin-bottom: 10px;
+  outline: none;
 }
-
-.weather-alert p {
-  font-size: 1rem;
-  margin: 0;
+.inputSection button{
+  background-color: transparent;
+  color: skyblue;
+  border: 2px solid skyblue;
+  padding: 10px 15px;
+  margin-top: 20px;
+  border-radius: 10px;
+  transition: .2s ease-in-out transform;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.inputSection button:hover{
+  background-color: skyblue;
+  color: black;
+  transform: scale(1.1);
 }

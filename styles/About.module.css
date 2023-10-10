@@ -1,1 +1,28 @@
-/* components/About.module.css */
+/* styles/about.module.css */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 70vh;
+  width: 52vw;
+  padding: 70px;
+  margin-left: 19vw;
+  background-image: url("/box_home.png");
+  background-size: cover;
+  transition: .2s ease-in-out transform;
+}
+.container:hover{
+  transform: scale(1.1);
+}
+
+.title {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.container p {
+  margin-bottom: 15px;
+}
