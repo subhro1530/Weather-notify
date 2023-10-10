@@ -103,10 +103,12 @@ const Home = () => {
           <p>Loading...</p>
         )}
         <div className={styles.inputSection}>
+          <form method="post" action="/maxmin_temp">
           <label>
             Max Temperature:
             <input
               type="number"
+              name="max_temp"
               value={maxTempAlert}
               onChange={handleMaxTempChange}
             />
@@ -115,10 +117,12 @@ const Home = () => {
             Min Temperature:
             <input
               type="number"
+              name="min_temp"
               value={minTempAlert}
               onChange={handleMinTempChange}
             />
           </label>
+          </form>
           <button onClick={handleNotificationPermission}>
             Enable Notifications
           </button>
