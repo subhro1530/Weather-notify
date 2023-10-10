@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "@/styles/Sign.module.css";
 import Navbar from "../components/Navbar";
+import Link from "next/link";
 
 const SignIn = () => {
   return (
