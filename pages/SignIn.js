@@ -5,6 +5,36 @@ import Navbar from "../components/Navbar";
 import Link from "next/link";
 
 const SignIn = () => {
+  function caesarCipherDecrypt(text, shift) {
+    const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let encryptedText = "";
+
+    for (let i = 0; i < text.length; i++) {
+      let char = text[i];
+
+      if (char.match(/[a-zA-Z]/)) {
+        const isUpperCase = char === char.toUpperCase();
+        char = char.toUpperCase();
+
+        const charIndex = alphabet.indexOf(char);
+        const encryptedIndex = (charIndex + shift) % 26;
+
+        const encryptedChar = alphabet.charAt(encryptedIndex);
+
+        encryptedText += isUpperCase
+          ? encryptedChar
+          : encryptedChar.toLowerCase();
+      } else {
+        encryptedText += char;
+      }
+    }
+
+    return encryptedText;
+  }
+
+
+  //  decryptedPass=caesarCipherDecrypt(query.password,-3);
+
   return (
     <>
       <Navbar />

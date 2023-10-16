@@ -10,12 +10,34 @@ import {
   AlertIcon,
   CloseButton,
 } from "@chakra-ui/react";
-import {
-  FormControl,
-  FormLabel,
-  FormErrorMessage,
-  FormHelperText,
-} from "@chakra-ui/react";
+
+function caesarCipherEncrypt(text, shift) {
+  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let encryptedText = "";
+
+  for (let i = 0; i < text.length; i++) {
+    let char = text[i];
+
+    if (char.match(/[a-zA-Z]/)) {
+      const isUpperCase = char === char.toUpperCase();
+      char = char.toUpperCase();
+
+      const charIndex = alphabet.indexOf(char);
+      const encryptedIndex = (charIndex + shift) % 26;
+
+      const encryptedChar = alphabet.charAt(encryptedIndex);
+
+      encryptedText += isUpperCase
+        ? encryptedChar
+        : encryptedChar.toLowerCase();
+    } else {
+      encryptedText += char;
+    }
+  }
+
+  return encryptedText;
+}
+
 
 const SignUp = () => {
   const [isredPassAlertVisible, setIsredPassAlertVisible] = useState(false);
@@ -32,17 +54,23 @@ const SignUp = () => {
     phone: "",
   });
   const isError = query.email === "";
-  const [cnfpassword, setCnfpassword] = useState();
+  let [cnfpassword, setCnfpassword] = useState();
   const [user, setUser] = useState();
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     console.log(query.password);
+    let encryptedPass = caesarCipherEncrypt(query.password, 3);
+    let encryptedConfirmedPass = caesarCipherEncrypt(cnfpassword, 3);
     console.log(cnfpassword);
+    console.log(encryptedConfirmedPass);
     try {
       if (
         (query.password === cnfpassword && cnfpassword === undefined) ||
         cnfpassword !== null
       ) {
+        query.password = encryptedPass;
+        cnfpassword = encryptedConfirmedPass;
         const response = await fetch("/api/SignUpReq&Res", {
           method: "POST",
           headers: {

@@ -1,22 +1,3 @@
-// // pages/api/SignUpReq&Res.js
-
-// import dbConnect from "../../utils/dbConnect";
-// import User from "../../models/User";
-
-// // Create a route to handle user sign-up
-// export default async function signUpfunction(req, res) {
-//   const { method } = req;
-//   const data = req.body;
-//   console.log(data);
-//   await dbConnect();
-//   try {
-//     const user = await User.create(data)
-//     res.status(201).json({ success: true, data: user, message: "User signed up successfully" })
-//   } catch (error) {
-//     res.status(400).json({ success: false, error: "Server error" })
-//   }
-// };
-
 import dbConnect from "../../utils/dbConnect";
 import User from "../../models/User";
 
