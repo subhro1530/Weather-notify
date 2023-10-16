@@ -10,8 +10,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
-    width: 62vw;
+    height: 95%;
+    width: 66%;
     background-image: url("/box_home.png");
     background-size: cover;
     flex-direction: column;
@@ -20,7 +20,7 @@
     transition: .2s ease-in-out transform;
 }
 .signCont:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 .signInfoItems input{
     background-color: transparent;
@@ -28,24 +28,46 @@
     border-radius: 20px;
     color: skyblue;
     padding: 10px 20px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     outline: none;
     font-size: 18px;
-    margin-top: 10px;
+    margin-top: 5px;
+    width: 60%;
 }
 
+.signUpLabel{
+    color: antiquewhite;
+    font-size: 20px;
+    width: 40%;
+    text-align: right;
+    margin-right: 10px;
+}
 .signTitle{
     margin-bottom: 20px;
     font-weight: 400;
     font-size: 40px;
+    color: aqua;
+    text-shadow: 2px 1px 1px black;
+}
+.ItemCont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
 }
 .ItemCont2{
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 10px;
+}
+.signUpForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
 }
-.signInBtn{
+.signUpBtn{
     text-align: center;
     background-color: transparent;
     color: aqua;
@@ -59,22 +81,33 @@
     margin-top: 25px;
     margin-bottom: 20px;
 }
-.signInBtn:hover{
+.signUpBtn:hover{
     background-color: aqua;
     border: none;
     color: black;
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.ForgotPasswordBtn{
+.AlreadyRegisteredtBtn{
     color: aliceblue;
     background-color: transparent;
     border: none;
     text-decoration: none;
+    margin: 10px;
+    margin-right: 10px;
+    border: 5px solid cornflowerblue;
+    border-radius: 20px;
+    padding: 10px;
 }
-.CreateAccountBtn{
+.signUpLogIn{
     color: rgb(49, 159, 255);
     background-color: transparent;
     border: none;
     text-decoration: none;
+    margin: 10px;
+    margin-left: 10px;
+}
+.signUpLogIn:hover{
+   color: aqua;
+   text-decoration: underline;
 }
