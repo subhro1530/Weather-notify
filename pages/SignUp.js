@@ -10,6 +10,23 @@ import {
   AlertIcon,
   CloseButton,
 } from "@chakra-ui/react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faUser,
+  faEnvelope,
+  faKey,
+  faEye,
+  faEyeSlash,
+  faPhone,
+} from "@fortawesome/free-solid-svg-icons";
+
+const LoginForm = () => {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+};
 
 function caesarCipherEncrypt(text, shift) {
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -37,8 +54,6 @@ function caesarCipherEncrypt(text, shift) {
 
   return encryptedText;
 }
-
-
 const SignUp = () => {
   const [isredPassAlertVisible, setIsredPassAlertVisible] = useState(false);
   const [isredEmailAlertVisible, setIsredEmailAlertVisible] = useState(false);
@@ -53,20 +68,19 @@ const SignUp = () => {
     password: "",
     phone: "",
   });
-  const isError = query.email === "";
   let [cnfpassword, setCnfpassword] = useState();
   const [user, setUser] = useState();
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    console.log(query.password);
     let encryptedPass = caesarCipherEncrypt(query.password, 3);
     let encryptedConfirmedPass = caesarCipherEncrypt(cnfpassword, 3);
+    console.log(query.password);
+    console.log(encryptedPass);
     console.log(cnfpassword);
     console.log(encryptedConfirmedPass);
     try {
       if (
-        (query.password === cnfpassword && cnfpassword === undefined) ||
+        (query.password == cnfpassword && cnfpassword === undefined) ||
         cnfpassword !== null
       ) {
         query.password = encryptedPass;
@@ -135,12 +149,11 @@ const SignUp = () => {
     }, 2500);
   };
 
-  const PasswordCheck = (e)=>{
-    const regex =/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/
-    if(regex.test(e.target.value)){
-      
+  const PasswordCheck = (e) => {
+    const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/;
+    if (regex.test(e.target.value)) {
     }
-  }
+  };
   const theme = extendTheme({
     styles: {
       global: {
@@ -208,6 +221,10 @@ const SignUp = () => {
               <div className={styles.ItemCont}>
                 <label className={styles.signUpLabel} htmlFor="firstName">
                   {" "}
+                  <FontAwesomeIcon
+                    icon={faUser}
+                    className={styles.customIcon}
+                  />
                   First Name :{" "}
                 </label>
                 <input
@@ -238,6 +255,10 @@ const SignUp = () => {
               </div>
               <div className={styles.ItemCont}>
                 <label className={styles.signUpLabel} htmlFor="signUpemail">
+                  <FontAwesomeIcon
+                    icon={faEnvelope}
+                    className={styles.customIcon}
+                  />
                   Email :{" "}
                 </label>
                 <input
@@ -251,8 +272,9 @@ const SignUp = () => {
                   }}
                 />
               </div>
-              <div className={styles.ItemCont}>
+              <div className={styles.ItemCont3}>
                 <label className={styles.signUpLabel} htmlFor="password">
+                  <FontAwesomeIcon icon={faKey} className={styles.customIcon} />
                   Password :{" "}
                 </label>
                 <input
@@ -265,8 +287,12 @@ const SignUp = () => {
                     setQuery({ ...query, password: event.target.value });
                   }}
                 />
+                <FontAwesomeIcon
+                  icon={faEyeSlash}
+                  className={styles.customEyeIcon}
+                />
               </div>
-              <div className={styles.ItemCont}>
+              <div className={styles.ItemCont3}>
                 <label className={styles.signUpLabel} htmlFor="cnfpassword">
                   Confirm Password :{" "}
                 </label>
@@ -277,13 +303,20 @@ const SignUp = () => {
                   className={styles.signUpPassword}
                   id="cnfpassword"
                   onChange={(event) => {
-
                     setCnfpassword(event.target.value);
                   }}
+                />
+                <FontAwesomeIcon
+                  icon={faEyeSlash}
+                  className={styles.customEyeIcon}
                 />
               </div>
               <div className={styles.ItemCont}>
                 <label className={styles.signUpLabel} htmlFor="phone">
+                  <FontAwesomeIcon
+                    icon={faPhone}
+                    className={styles.customIcon}
+                  />
                   Phone Number :{" "}
                 </label>
                 <input
