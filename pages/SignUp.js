@@ -19,7 +19,6 @@ import {
   faEyeSlash,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
-import bcrypt from "bcryptjs";
 
 const SignUp = () => {
   const [isredPassAlertVisible, setIsredPassAlertVisible] = useState(false);
@@ -46,27 +45,6 @@ const SignUp = () => {
     setShowCnfPassword(!showCnfPassword);
   };
 
-  function encryptPass(Password) {
-    return new Promise((resolve, reject) => {
-      bcrypt.hash(Password, 5, (err, hash) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(hash);
-        }
-      });
-    });
-  }
-  async function storeHashedPassword(Password) {
-    try {
-      const hashedPassword = await encryptPass(Password);
-      // query.password = hashedPassword;
-      setQuery({ ...query, password: hashedPassword });
-    } catch (err) {
-      console.error("Error:", err);
-    }
-  }
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(query.password);
@@ -76,7 +54,6 @@ const SignUp = () => {
         query.password === cnfpassword &&
         (cnfpassword !== undefined || cnfpassword !== null)
       ) {
-        await storeHashedPassword(query.password);
         const response = await fetch("/api/SignUpReq&Res", {
           method: "POST",
           headers: {
