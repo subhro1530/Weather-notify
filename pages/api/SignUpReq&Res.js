@@ -18,14 +18,14 @@ export default async function handler(req, res) {
       const user = await User.create(data);
       const savedUser = await user.save();
       res.status(200).json({
-        success: true,
-        data: savedUser,
-        message: "User created successfully",
+        "success": true,
+        "data": savedUser,
+        "message": "User created successfully"
       });
     }
   } catch (error) {
     console.error(error);
-    res.status(500).json({ success: false, error: "Server error" });
+    res.status(500).json({ "success": false, "error": "Server error" });
   }
   // } else {
   //   res.status(405).json({ success: false, error: "Method not allowed" });
