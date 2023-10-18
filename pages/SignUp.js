@@ -60,7 +60,8 @@ const SignUp = () => {
   async function storeHashedPassword(Password) {
     try {
       const hashedPassword = await encryptPass(Password);
-      query.password = hashedPassword;
+      // query.password = hashedPassword;
+      setQuery({ ...query, password: hashedPassword });
     } catch (err) {
       console.error("Error:", err);
     }
