@@ -4,6 +4,12 @@ import Navbar from "../components/Navbar";
 import Copyright from "../components/Copyright";
 import WeatherInfo from "../components/WeatherInfo";
 import styles from "@/styles/index.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faMinusCircle,
+  faPlusCircle,
+  faPlusMinus,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -104,32 +110,54 @@ const Home = () => {
         )}
         <div className={styles.inputSection}>
           <form method="post" action="/maxmin_temp">
-          <label>
-            Max Temperature:
-            <input
-              type="number"
-              name="max_temp"
-              value={maxTempAlert}
-              onChange={handleMaxTempChange}
-            />
-          </label>
-          <label className={styles.minTemp}>
-            Min Temperature:
-            <input
-              type="number"
-              name="min_temp"
-              value={minTempAlert}
-              onChange={handleMinTempChange}
-            />
-          </label>
+            <div className={styles.tempinputCont}>
+              <label className={styles.tempLabel}>Max Temperature:</label>
+              <FontAwesomeIcon
+                icon={faPlusCircle}
+                className={styles.customIconLeft}
+              />
+              <input
+                type="number"
+                name="max_temp"
+                max={60}
+                min={-40}
+                value={maxTempAlert}
+                onChange={handleMaxTempChange}
+                className={styles.tempInput}
+              />
+              <FontAwesomeIcon
+                icon={faMinusCircle}
+                className={styles.customIconRight}
+              />
+            </div>
+            <div className={styles.tempinputCont}>
+              <label className={styles.tempLabel}>Min Temperature:</label>
+              <FontAwesomeIcon
+                icon={faPlusCircle}
+                className={styles.customIconLeft}
+              />
+              <input
+                type="number"
+                name="min_temp"
+                value={minTempAlert}
+                max={40}
+                min={-90}
+                onChange={handleMinTempChange}
+                className={styles.tempInput}
+              />
+              <FontAwesomeIcon
+                icon={faMinusCircle}
+                className={styles.customIconRight}
+              />
+            </div>
           </form>
           <button onClick={handleNotificationPermission}>
             Enable Notifications
           </button>
-        <p>
-          Next update in {Math.floor(nextUpdateCountdown / 60)} minutes{" "}
-          {nextUpdateCountdown % 60} seconds.
-        </p>
+          <p>
+            Next update in {Math.floor(nextUpdateCountdown / 60)} minutes{" "}
+            {nextUpdateCountdown % 60} seconds.
+          </p>
         </div>
       </div>
       <Copyright />

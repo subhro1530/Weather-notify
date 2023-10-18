@@ -13,9 +13,14 @@ p {
 
 /* Apply default font and color to the body */
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: skyblue;
-    background-color: #0E101F;
+  background-color: #0e101f;
 }
 
 /* Add any other global styles here */
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  display: none;
+}

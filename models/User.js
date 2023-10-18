@@ -26,14 +26,6 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
-    validate: {
-      validator: function (value) {
-        return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/.test(
-          value
-        );
-      },
-      message: "Password must meet the required criteria.",
-    },
   },
   phone: {
     type: Number,

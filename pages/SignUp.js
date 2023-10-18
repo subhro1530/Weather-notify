@@ -19,41 +19,8 @@ import {
   faEyeSlash,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
+import bcrypt from "bcryptjs";
 
-const LoginForm = () => {
-  const [showPassword, setShowPassword] = useState(false);
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
-};
-
-function caesarCipherEncrypt(text, shift) {
-  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  let encryptedText = "";
-
-  for (let i = 0; i < text.length; i++) {
-    let char = text[i];
-
-    if (char.match(/[a-zA-Z]/)) {
-      const isUpperCase = char === char.toUpperCase();
-      char = char.toUpperCase();
-
-      const charIndex = alphabet.indexOf(char);
-      const encryptedIndex = (charIndex + shift) % 26;
-
-      const encryptedChar = alphabet.charAt(encryptedIndex);
-
-      encryptedText += isUpperCase
-        ? encryptedChar
-        : encryptedChar.toLowerCase();
-    } else {
-      encryptedText += char;
-    }
-  }
-
-  return encryptedText;
-}
 const SignUp = () => {
   const [isredPassAlertVisible, setIsredPassAlertVisible] = useState(false);
   const [isredEmailAlertVisible, setIsredEmailAlertVisible] = useState(false);
@@ -69,22 +36,46 @@ const SignUp = () => {
     phone: "",
   });
   let [cnfpassword, setCnfpassword] = useState();
-  const [user, setUser] = useState();
+  const [showPassword, setShowPassword] = useState(false);
+  const [showCnfPassword, setShowCnfPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+  const toggleCnfPasswordVisibility = () => {
+    setShowCnfPassword(!showCnfPassword);
+  };
+
+  function encryptPass(Password) {
+    return new Promise((resolve, reject) => {
+      bcrypt.hash(Password, 10, (err, hash) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(hash);
+        }
+      });
+    });
+  }
+  async function storeHashedPassword(Password) {
+    try {
+      const hashedPassword = await encryptPass(Password);
+      query.password = hashedPassword;
+    } catch (err) {
+      console.error("Error:", err);
+    }
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let encryptedPass = caesarCipherEncrypt(query.password, 3);
-    let encryptedConfirmedPass = caesarCipherEncrypt(cnfpassword, 3);
     console.log(query.password);
-    console.log(encryptedPass);
     console.log(cnfpassword);
-    console.log(encryptedConfirmedPass);
     try {
       if (
-        (query.password == cnfpassword && cnfpassword === undefined) ||
-        cnfpassword !== null
+        query.password === cnfpassword &&
+        (cnfpassword !== undefined || cnfpassword !== null)
       ) {
-        query.password = encryptedPass;
-        cnfpassword = encryptedConfirmedPass;
+        await storeHashedPassword(query.password);
         const response = await fetch("/api/SignUpReq&Res", {
           method: "POST",
           headers: {
@@ -109,7 +100,6 @@ const SignUp = () => {
   };
   function handleResponse(response, Data) {
     if (response.status === 200) {
-      setUser(user, Data);
       conditionToTriggerGreenAlert = true;
       if (conditionToTriggerGreenAlert) {
         showGreenAlert();
@@ -117,8 +107,7 @@ const SignUp = () => {
       setTimeout(() => {
         conditionToTriggerGreenAlert = false;
       }, 3000);
-      console.log("Response Code : 200 & Data received:", Data);
-      console.log(`CurrentUser:${user}`);
+      console.log(`CurrentUser:${Data.data.firstName} ${Data.data.lastName}`);
     } else if (response.status === 406) {
       conditionToTriggerRedEmailAlert = true;
       if (conditionToTriggerRedEmailAlert) {
@@ -279,7 +268,7 @@ const SignUp = () => {
                 </label>
                 <input
                   name="password"
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   placeholder="Enter Your Password ..."
                   className={styles.signUpPassword}
                   id="password"
@@ -288,8 +277,10 @@ const SignUp = () => {
                   }}
                 />
                 <FontAwesomeIcon
-                  icon={faEyeSlash}
+                  icon={showPassword ? faEye : faEyeSlash}
                   className={styles.customEyeIcon}
+                  id="passwordEye"
+                  onClick={togglePasswordVisibility}
                 />
               </div>
               <div className={styles.ItemCont3}>
@@ -297,7 +288,7 @@ const SignUp = () => {
                   Confirm Password :{" "}
                 </label>
                 <input
-                  type="password"
+                  type={showCnfPassword ? "text" : "password"}
                   name="cnfpassword"
                   placeholder="Enter Your Password Again ..."
                   className={styles.signUpPassword}
@@ -307,8 +298,10 @@ const SignUp = () => {
                   }}
                 />
                 <FontAwesomeIcon
-                  icon={faEyeSlash}
+                  icon={showCnfPassword ? faEye : faEyeSlash}
                   className={styles.customEyeIcon}
+                  id="cnfpasswordEye"
+                  onClick={toggleCnfPasswordVisibility}
                 />
               </div>
               <div className={styles.ItemCont}>

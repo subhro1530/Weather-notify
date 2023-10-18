@@ -3,37 +3,35 @@ import React, { useState, useEffect } from "react";
 import styles from "@/styles/SignIn.module.css";
 import Navbar from "../components/Navbar";
 import Link from "next/link";
+import crypto from "crypto";
 
 const SignIn = () => {
-  function caesarCipherDecrypt(text, shift) {
-    const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    let encryptedText = "";
-
-    for (let i = 0; i < text.length; i++) {
-      let char = text[i];
-
-      if (char.match(/[a-zA-Z]/)) {
-        const isUpperCase = char === char.toUpperCase();
-        char = char.toUpperCase();
-
-        const charIndex = alphabet.indexOf(char);
-        const encryptedIndex = (charIndex + shift) % 26;
-
-        const encryptedChar = alphabet.charAt(encryptedIndex);
-
-        encryptedText += isUpperCase
-          ? encryptedChar
-          : encryptedChar.toLowerCase();
-      } else {
-        encryptedText += char;
-      }
-    }
-
-    return encryptedText;
+  function createDecipherPass(decryptPass) {
+    const passphrase = "ClimaGuard";
+    const encryptionKey = crypto.pbkdf2Sync(
+      passphrase,
+      "salt",
+      100000,
+      16,
+      "sha256"
+    );
+    const encryptionIV = crypto.pbkdf2Sync(
+      passphrase,
+      "salt",
+      100000,
+      16,
+      "sha256"
+    );
+    var mykey = crypto.createDecipheriv(
+      "aes-128-cbc",
+      encryptionKey,
+      encryptionIV
+    );
+    var mystr = mykey.update(decryptPass, "hex", "utf8");
+    mystr += mykey.final("utf8");
+    return mystr;
   }
-
-
-  //  decryptedPass=caesarCipherDecrypt(query.password,-3);
+  decryptedPass = createDecipherPass();
 
   return (
     <>
