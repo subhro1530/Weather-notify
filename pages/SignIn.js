@@ -6,32 +6,32 @@ import Link from "next/link";
 import crypto from "crypto";
 
 const SignIn = () => {
-  function createDecipherPass(decryptPass) {
-    const passphrase = "ClimaGuard";
-    const encryptionKey = crypto.pbkdf2Sync(
-      passphrase,
-      "salt",
-      100000,
-      16,
-      "sha256"
-    );
-    const encryptionIV = crypto.pbkdf2Sync(
-      passphrase,
-      "salt",
-      100000,
-      16,
-      "sha256"
-    );
-    var mykey = crypto.createDecipheriv(
-      "aes-128-cbc",
-      encryptionKey,
-      encryptionIV
-    );
-    var mystr = mykey.update(decryptPass, "hex", "utf8");
-    mystr += mykey.final("utf8");
-    return mystr;
-  }
-  decryptedPass = createDecipherPass();
+//   function createDecipherPass(decryptPass) {
+//     const passphrase = "ClimaGuard";
+//     const encryptionKey = crypto.pbkdf2Sync(
+//       passphrase,
+//       "salt",
+//       100000,
+//       16,
+//       "sha256"
+//     );
+//     const encryptionIV = crypto.pbkdf2Sync(
+//       passphrase,
+//       "salt",
+//       100000,
+//       16,
+//       "sha256"
+//     );
+//     var mykey = crypto.createDecipheriv(
+//       "aes-128-cbc",
+//       encryptionKey,
+//       encryptionIV
+//     );
+//     var mystr = mykey.update(decryptPass, "hex", "utf8");
+//     mystr += mykey.final("utf8");
+//     return mystr;
+//   }
+//   decryptedPass = createDecipherPass();
 
   return (
     <>
