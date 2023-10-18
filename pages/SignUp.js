@@ -48,7 +48,7 @@ const SignUp = () => {
 
   function encryptPass(Password) {
     return new Promise((resolve, reject) => {
-      bcrypt.hash(Password, 10, (err, hash) => {
+      bcrypt.hash(Password, 5, (err, hash) => {
         if (err) {
           reject(err);
         } else {
