@@ -1,17 +1,16 @@
-.body{
-  background-color: #0E101F;  
+.body {
+  background-color: #0e101f;
 }
 
-.container{
+.container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
   color: rgb(0, 247, 255);
-  
 }
-.inputSection{
-  width: 40vw;
+.inputSection {
+  width: 37vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,42 +20,85 @@
   /* margin-right: 50px; */
   background-image: url("/circle_home.png");
   background-size: cover;
-  margin-top: 100px;
-  height: 40vw;
+  position: relative;
+  right: 20px;
+  bottom: -35px;
+  height: 37vw;
   padding: 30px;
-  transition: .2s ease-in-out transform;
+  transition: 0.2s ease-in-out transform;
 }
-.inputSection form{
+.inputSection form {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  font-size: 1.3rem;
+  margin-left: 50px;
 }
-.inputSection:hover{
-  transform: scale(1.1);
+.inputSection:hover {
+  overflow: hidden;
+  transform: scale(1.05);
+  margin-top: 0px;
 }
-.inputSection input{
-  color: white;
-  background-color: transparent;
-  border: 1px solid skyblue;
-  border-radius: 20px;
-  margin-left: 10px;
-  padding: 5px 10px;
-  margin-bottom: 10px;
-  outline: none;
-}
-.inputSection button{
+.inputSection button {
   background-color: transparent;
   color: skyblue;
   border: 2px solid skyblue;
   padding: 10px 15px;
   margin-top: 20px;
   border-radius: 10px;
-  transition: .2s ease-in-out transform;
+  transition: 0.2s ease-in-out transform;
   margin-bottom: 20px;
   cursor: pointer;
 }
-.inputSection button:hover{
+.inputSection button:hover {
   background-color: skyblue;
   color: black;
   transform: scale(1.1);
+}
+.tempinputCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+  margin: 15px;
+}
+.tempLabel {
+  width: 45%;
+}
+.tempInput {
+  width: 35%;
+  height: 20px;
+  text-align: center;
+  color: white;
+  background-color: transparent;
+  border: 1px solid skyblue;
+  border-radius: 20px;
+  padding: 5px 10px;
+  outline: none;
+}
+
+.customIconLeft,
+.customIconRight {
+  position: relative;
+  height: 40px;
+  width: 43px;
+  cursor: pointer;
+  color: rgba(0, 221, 255, 1);
+  border-radius: 50%;
+  border: 4px solid rgba(67, 78, 209, 1);
+  box-shadow: 2px 2px 15px -5px rgba(0, 221, 255, 0.823);
+}
+.customIconLeft:hover,
+.customIconRight:hover {
+  transform: scale(1.05);
+  border: 6px solid  rgb(57, 65, 153);
+  color:  rgba(0, 221, 255, 0.823);
+  font-weight: bolder;
+}
+.customIconLeft {
+  left: 40px;
+}
+.customIconRight {
+  right: 40px;
 }
