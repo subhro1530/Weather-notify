@@ -54,7 +54,7 @@ const SignUp = () => {
         query.password === cnfpassword &&
         (cnfpassword !== undefined || cnfpassword !== null)
       ) {
-        const response = await fetch("../api/SignUpReq&Res", {
+        const response = await fetch("/api/SignUpReq&Res", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
