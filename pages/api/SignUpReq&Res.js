@@ -18,7 +18,7 @@ export default async function handler(req, res) {
       data.password=`${hashedPassword}`;
       const user = await User.create(data);
       const savedUser = await user.save();
-      res.setHeader("Cache-Control", "s-maxage=10, stale-while-revalidate");
+      res.setHeader("Cache-Control", "s-maxage=15, stale-while-revalidate");
       res.status(200).json({
         success: true,
         data: savedUser,
