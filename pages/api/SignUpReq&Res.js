@@ -14,7 +14,8 @@ export default async function handler(req, res) {
         .status(406)
         .json({ success: false, error: "Email already registered" });
     } else {
-      data.password = await bcrypt.hash(data.password, 8);
+      const hashedPassword = await bcrypt.hash(data.password, 8);
+      data.password=`${hashedPassword}`;
       const user = await User.create(data);
       const savedUser = await user.save();
       res.status(200).json({
