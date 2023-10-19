@@ -11,18 +11,18 @@ export default async function handler(req, res) {
     const check = await User.findOne({ email: data.email });
     if (check) {
       return res
-      .status(406)
-      .json({ success: false, error: "Email already registered" });
+        .status(406)
+        .json({ success: false, error: "Email already registered" });
     } else {
-      const hashedPassword = await bcrypt.hash(data.password, 8);
-      data.password=`${hashedPassword}`;
+      // const hashedPassword = await bcrypt.hash(data.password, 8);
+      // data.password = `${hashedPassword}`;
       const user = await User.create(data);
       const savedUser = await user.save();
       res.setHeader("Cache-Control", "s-maxage=15, stale-while-revalidate");
       res.status(200).json({
         success: true,
         data: savedUser,
-        message: "User created successfully"
+        message: "User created successfully",
       });
     }
   } catch (error) {
