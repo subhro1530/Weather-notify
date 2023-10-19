@@ -5,11 +5,7 @@ import Copyright from "../components/Copyright";
 import WeatherInfo from "../components/WeatherInfo";
 import styles from "@/styles/index.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faMinusCircle,
-  faPlusCircle,
-  faPlusMinus,
-} from "@fortawesome/free-solid-svg-icons";
+import { faMinusCircle, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -115,6 +111,16 @@ const Home = () => {
               <FontAwesomeIcon
                 icon={faPlusCircle}
                 className={styles.customIconLeft}
+                onClick={(e) => {
+                  const inputElement =
+                    e.target.parentElement.parentElement.querySelector(
+                      "input[name=max_temp]"
+                    );
+                  if (inputElement) {
+                    inputElement.value = parseInt(inputElement.value) + 1;
+                    setMaxTempAlert(e.target.value);
+                  }
+                }}
               />
               <input
                 type="number"
@@ -128,6 +134,16 @@ const Home = () => {
               <FontAwesomeIcon
                 icon={faMinusCircle}
                 className={styles.customIconRight}
+                onClick={(e) => {
+                  const inputElement =
+                    e.target.parentElement.parentElement.querySelector(
+                      "input[name=max_temp]"
+                    );
+                  if (inputElement) {
+                    inputElement.value = parseInt(inputElement.value) - 1;
+                    setMaxTempAlert(e.target.value);
+                  }
+                }}
               />
             </div>
             <div className={styles.tempinputCont}>
@@ -135,6 +151,16 @@ const Home = () => {
               <FontAwesomeIcon
                 icon={faPlusCircle}
                 className={styles.customIconLeft}
+                onClick={(e) => {
+                  const inputElement2 =
+                    e.target.parentElement.parentElement.querySelector(
+                      "input[name=min_temp]"
+                    );
+                  if (inputElement2) {
+                    inputElement2.value = parseInt(inputElement2.value) + 1;
+                    setMinTempAlert(e.target.value);
+                  }
+                }}
               />
               <input
                 type="number"
@@ -148,6 +174,16 @@ const Home = () => {
               <FontAwesomeIcon
                 icon={faMinusCircle}
                 className={styles.customIconRight}
+                onClick={(e) => {
+                  const inputElement2 =
+                    e.target.parentElement.parentElement.querySelector(
+                      "input[name=min_temp]"
+                    );
+                  if (inputElement2) {
+                    inputElement2.value = parseInt(inputElement2.value) - 1;
+                    setMinTempAlert(e.target.value);
+                  }
+                }}
               />
             </div>
           </form>
