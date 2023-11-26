@@ -32,7 +32,7 @@ const SignUp = () => {
     lastName: "",
     email: "",
     password: "",
-    phone: "",
+    phone: ""
   });
   let [cnfpassword, setCnfpassword] = useState();
   const [showPassword, setShowPassword] = useState(false);
@@ -47,8 +47,7 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(query.password);
-    console.log(cnfpassword);
+    console.log(query);
     try {
       if (
         query.password === cnfpassword &&
@@ -203,6 +202,7 @@ const SignUp = () => {
                   onChange={(event) => {
                     setQuery({ ...query, firstName: event.target.value });
                   }}
+                  required
                 />
               </div>
               <div className={styles.ItemCont}>
@@ -218,6 +218,7 @@ const SignUp = () => {
                   onChange={(event) => {
                     setQuery({ ...query, lastName: event.target.value });
                   }}
+                  required
                 />
               </div>
               <div className={styles.ItemCont}>
@@ -237,6 +238,7 @@ const SignUp = () => {
                   onChange={(event) => {
                     setQuery({ ...query, email: event.target.value });
                   }}
+                  required
                 />
               </div>
               <div className={styles.ItemCont3}>
@@ -253,6 +255,7 @@ const SignUp = () => {
                   onChange={(event) => {
                     setQuery({ ...query, password: event.target.value });
                   }}
+                  required
                 />
                 <FontAwesomeIcon
                   icon={showPassword ? faEye : faEyeSlash}
@@ -274,6 +277,7 @@ const SignUp = () => {
                   onChange={(event) => {
                     setCnfpassword(event.target.value);
                   }}
+                  required
                 />
                 <FontAwesomeIcon
                   icon={showCnfPassword ? faEye : faEyeSlash}
@@ -299,6 +303,7 @@ const SignUp = () => {
                   onChange={(event) => {
                     setQuery({ ...query, phone: event.target.value });
                   }}
+                  required
                 />
               </div>
               <div className={styles.ItemCont2}>
