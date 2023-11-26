@@ -138,3 +138,7 @@
   left: -30px;
   cursor: pointer;
 }
+
+.alertzindexImp {
+  z-index: 2 !important;
+}

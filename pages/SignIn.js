@@ -5,33 +5,6 @@ import Navbar from "../components/Navbar";
 import Link from "next/link";
 
 const SignIn = () => {
-//   function createDecipherPass(decryptPass) {
-//     const passphrase = "ClimaGuard";
-//     const encryptionKey = crypto.pbkdf2Sync(
-//       passphrase,
-//       "salt",
-//       100000,
-//       16,
-//       "sha256"
-//     );
-//     const encryptionIV = crypto.pbkdf2Sync(
-//       passphrase,
-//       "salt",
-//       100000,
-//       16,
-//       "sha256"
-//     );
-//     var mykey = crypto.createDecipheriv(
-//       "aes-128-cbc",
-//       encryptionKey,
-//       encryptionIV
-//     );
-//     var mystr = mykey.update(decryptPass, "hex", "utf8");
-//     mystr += mykey.final("utf8");
-//     return mystr;
-//   }
-//   decryptedPass = createDecipherPass();
-
   return (
     <>
       <Navbar />
@@ -41,31 +14,39 @@ const SignIn = () => {
           <form method="POST" action="/userSignin">
             <div className={styles.signInfoItems}>
               <div className={styles.ItemCont}>
-                <label>Email : </label>
+                <label className={styles.signUpLabel} htmlFor="signInemail">
+                  Email :{" "}
+                </label>
                 <input
                   type="email"
-                  name="email"
+                  name="signInemail"
                   placeholder="Enter your email"
                   className={styles.signInemail}
                 />
               </div>
               <div className={styles.ItemCont}>
-                <label>Password : </label>
+                <label className={styles.signUpLabel} htmlFor="signInpassword">
+                  Password :{" "}
+                </label>
                 <input
                   type="password"
-                  name="password"
+                  name="signInpassword"
                   placeholder="Enter your password"
                   className={styles.signInPassword}
                 />
               </div>
               <div className={styles.ItemCont2}>
                 <button className={styles.signInBtn}>Sign In</button>
-                <button className={styles.ForgotPasswordBtn}>
-                  Forgot Password
-                </button>
-                <button className={styles.CreateAccountBtn}>
-                  <Link href="/SignUp">Create New Account</Link>
-                </button>
+                <div className={styles.ItemCont1}>
+                  <button className={styles.ForgotPasswordBtn}>
+                    Forgot Password,
+                  </button>
+                  <button className={styles.CreateAccountBtn}>
+                    <Link href="/SignUp" className={styles.signUpLink}>
+                      Create New Account
+                    </Link>
+                  </button>
+                </div>
               </div>
             </div>
           </form>
