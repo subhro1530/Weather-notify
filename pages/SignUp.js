@@ -27,6 +27,7 @@ const SignUp = () => {
   let conditionToTriggerRedPassAlert = false;
   let conditionToTriggerRedEmailAlert = false;
   let conditionToTriggerGreenAlert = false;
+  const [termsAccepted, setTermsAccepted] = useState(false);
   const [query, setQuery] = useState({
     firstName: "",
     lastName: "",
@@ -306,15 +307,24 @@ const SignUp = () => {
                   required
                 />
               </div>
+              <div className={styles.ItemCont}>
+                <input
+                  type="checkbox"
+                  id="termsCheckbox"
+                  onChange={() => setTermsAccepted(!termsAccepted)}
+                  checked={termsAccepted}
+                />
+                <label htmlFor="termsCheckbox" className={styles.termsLabel}>
+                  I accept the terms and conditions
+                </label>
+              </div>
               <div className={styles.ItemCont2}>
-                <button className={styles.signUpBtn} type="submit">
+                <button
+                  className={styles.signUpBtn}
+                  type="submit"
+                  disabled={!termsAccepted}
+                >
                   Sign Up
-                </button>
-                <button className={styles.AlreadyRegisteredtBtn}>
-                  Already Registered,
-                  <Link href="/SignIn" className={styles.signUpLogIn}>
-                    Log In
-                  </Link>
                 </button>
               </div>
             </form>
