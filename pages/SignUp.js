@@ -33,7 +33,7 @@ const SignUp = () => {
     lastName: "",
     email: "",
     password: "",
-    phone: ""
+    phone: "",
   });
   let [cnfpassword, setCnfpassword] = useState();
   const [showPassword, setShowPassword] = useState(false);
@@ -140,7 +140,11 @@ const SignUp = () => {
       <Navbar />
       <ChakraProvider theme={theme}>
         {isredEmailAlertVisible && (
-          <Alert status="warning" variant="top-accent">
+          <Alert
+            status="warning"
+            variant="top-accent"
+            className={styles.alertzindexImp}
+          >
             <AlertIcon />
             Already Registered! with the same Email Id ...
             <CloseButton
@@ -154,7 +158,11 @@ const SignUp = () => {
       </ChakraProvider>
       <ChakraProvider theme={theme}>
         {isredPassAlertVisible && (
-          <Alert status="warning" variant="left-accent">
+          <Alert
+            status="warning"
+            variant="left-accent"
+            className={styles.alertzindexImp}
+          >
             <AlertIcon />
             Password & Confirm Password does not matched ...
             <CloseButton
@@ -168,7 +176,11 @@ const SignUp = () => {
       </ChakraProvider>
       <ChakraProvider theme={theme}>
         {isgreenAlertVisible && (
-          <Alert status="success" variant="subtle">
+          <Alert
+            status="success"
+            variant="subtle"
+            className={styles.alertzindexImp}
+          >
             <AlertIcon />
             You are successfully registered ...
             <CloseButton

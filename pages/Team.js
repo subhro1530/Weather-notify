@@ -19,6 +19,7 @@ const Team = () => {
                 height={180}
                 width={180}
                 className={styles.memberImage}
+                alt="Shaswata Saha"
               ></Image>
             </div>
             <div className={styles.memberDesc}>
@@ -36,6 +37,7 @@ const Team = () => {
                 height={180}
                 width={180}
                 className={styles.memberImage}
+                alt="Pratham Agarwal"
               ></Image>
             </div>
             <div className={styles.memberDesc}>
@@ -52,6 +54,7 @@ const Team = () => {
                 height={180}
                 width={180}
                 className={styles.memberImage}
+                alt="Deep Ghosal"
               ></Image>
             </div>
             <div className={styles.memberDesc}>
@@ -68,6 +71,7 @@ const Team = () => {
                 height={180}
                 width={180}
                 className={styles.memberImage}
+                alt="Yatan Kumar"
               ></Image>
             </div>
             <div className={styles.memberDesc}>

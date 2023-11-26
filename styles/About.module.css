@@ -10,9 +10,10 @@
   margin-left: 19vw;
   background-image: url("/box_home.png");
   background-size: cover;
-  transition: .2s ease-in-out transform;
+  transition: 0.2s ease-in-out transform;
+  z-index: -1;
 }
-.container:hover{
+.container:hover {
   transform: scale(1.1);
 }
 

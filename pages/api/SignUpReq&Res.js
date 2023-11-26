@@ -7,7 +7,7 @@ export default async function handler(req, res) {
 
   try {
     const data = req.body;
-    console.log(data);
+    // console.log(data);
     const check = await User.findOne({ email: data.email });
     if (check) {
       return res
