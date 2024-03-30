@@ -1,5 +1,7 @@
 # ClimaGuard
 
+![image](https://github.com/subhro1530/Weather-notify/assets/113383437/adec11a9-7432-4516-ae32-f789345a6a41)
+
 ## Overview
 
 ClimaGuard is a cutting-edge weather monitoring and alert system that empowers users to stay informed about temperature changes in real-time. With personalized temperature limits and instant notifications, ClimaGuard ensures that you are always prepared for fluctuations in weather conditions.
